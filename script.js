@@ -2,22 +2,22 @@ var para=document.getElementsByTagName("p");
 
 
 
-    for (var i = 0; i < para.length; i++) {
+   /* for (var i = 0; i < para.length; i++) {
         var rijeci=para[i].innerHTML.split(" ");
-
+        
         
             for (var j = 0; j < rijeci.length; j++) {
                 var rijec = rijeci[j];
-           
+                console.log(rijec)
                 if(rijec.includes("COVID-19")){
-       console.log(rijec)
+  
        var span = "<span style='background-color: red;'>" + rijec + "</span>"
-                 console.log(span)
+                 
                  rijeci[j]=span;
                  }
             }
             para[i].innerHTML=rijeci.join(" ");
-        }
+        }*/
 
         function replace(){
             var search= document.getElementById("search").value;
@@ -25,7 +25,7 @@ var para=document.getElementsByTagName("p");
 
             for (var i = 0; i < para.length; i++) {
                 var rijeci=para[i].innerHTML.split(" ");
-        
+                
                 
                     for (var j = 0; j < rijeci.length; j++) {
                         var rijec = rijeci[j];
@@ -40,6 +40,29 @@ var para=document.getElementsByTagName("p");
                 }
 
         }
+        function searchText(){
+            var search= document.getElementById("search").value;
+           
+
+            for (var i = 0; i < para.length; i++) {
+                var rijeci=para[i].innerHTML.split(" ");
+                
+                
+                    for (var j = 0; j < rijeci.length; j++) {
+                        var rijec = rijeci[j];
+                   
+                        if(rijec===search) {
+                            var select = `<span style='background-color:yellow;'> ${search}  </span>`
+                         
+                         rijeci[j]=select;
+                        
+                         }
+                    }
+                    para[i].innerHTML=rijeci.join(" ");
+                }
+
+        }
+        
     
 
 
